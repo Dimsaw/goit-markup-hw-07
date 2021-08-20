@@ -10,6 +10,14 @@ html {
   box-sizing: border-box;
 }
 
+// Переменная цветов сайта
+$primary-text-color: #212121;
+$title-text-color: #757575;
+$accent-color: #2196f3;
+$white: #ffffff;
+$second-background-color: #2f303a;
+$additional-background-color: #f5f4fa;
+
 *,
 *::before,
 *::after {
@@ -20,18 +28,9 @@ body {
   font-family: "Roboto", sans-serif;
   font-style: normal;
   font-weight: 400;
-  color: var(--primary-text-color);
+  color: $primary-text-color;
   margin: 0 auto;
   background-position: center;
-}
-
-:root {
-  --primary-text-color: #212121;
-  --title-text-color: #757575;
-  --accent-color: #2196f3;
-  --white: #ffffff;
-  --second-background-color: #2f303a;
-  --additional-background-color: #f5f4fa;
 }
 
 ul {
@@ -54,24 +53,23 @@ img {
   height: auto;
 }
 
-// cursor: pointer;
-// cursor: auto;
+//   cursor: pointer;
+//   cursor: auto;
 
 /*header*/
 
 header {
-  background-color: var(--white);
+  background-color: $white;
 }
 
 .page-header {
-  background-color: var(--white);
+  background-color: $white;
 }
-
 .container {
   margin: 0 auto;
   padding: 0 15px;
   width: 1200px;
-  background-color: var(--white);
+  background-color: $white;
 }
 
 .page-header__container {
@@ -85,7 +83,7 @@ header {
 }
 
 .logo {
-  color: var(--accent-color);
+  color: $accent-color;
   text-decoration: none;
   font-family: "Raleway", sans-serif;
   font-style: normal;
@@ -109,13 +107,8 @@ header {
   margin-left: 93px;
 }
 
-.site-nav__menu:hover,
-.site-nav__menu:focus {
-  color: var(--accent-color);
-}
-
 .site-nav__menu {
-  color: var(--primary-text-color);
+  color: $primary-text-color;
   font-weight: 500;
   font-size: 14px;
   line-height: 1.1;
@@ -125,8 +118,12 @@ header {
   margin-left: 10px;
 
   transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
-
   position: relative;
+
+  &:hover,
+  &:focus {
+    color: $accent-color;
+  }
 }
 
 .site-nav__menu--current::after {
@@ -138,13 +135,13 @@ header {
   width: 100%;
   height: 4px;
   border-radius: 2px;
-  background-color: var(--accent-color);
+  background-color: $accent-color;
 
   bottom: -1px;
 }
 
 .site-nav__menu--current {
-  color: var(--accent-color);
+  color: $accent-color;
 }
 .page-header__info {
   margin-left: auto;
@@ -162,11 +159,11 @@ header {
 
 .site-nav__item:hover,
 .site-nav__item:focus {
-  fill: var(--accent-color);
+  fill: $accent-color;
 }
 
 .auth-nav__link {
-  color: var(--title-text-color);
+  color: $title-text-color;
   font-style: normal;
   font-weight: 500;
   font-size: 14px;
@@ -176,11 +173,11 @@ header {
   transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
   display: flex;
   align-items: center;
-}
 
-.auth-nav__link:hover,
-.auth-nav__link:focus {
-  color: var(--accent-color);
+  &:hover,
+  &:focus {
+    color: $accent-color;
+  }
 }
 
 .auth-nav__item:not(:last-child) {
@@ -210,7 +207,7 @@ header {
   max-width: 1600px;
   margin: 0 auto;
   background-repeat: no-repeat;
-  background-color: var(--second-background-color);
+  background-color: $second-background-color;
 
   background-size: cover;
 }
@@ -222,7 +219,7 @@ header {
 .order__main-idea {
   max-width: 696px;
   margin: 0 auto 30px;
-  color: var(--white);
+  color: $white;
   font-weight: 900;
   font-size: 44px;
   line-height: 1.36;
@@ -230,8 +227,8 @@ header {
 }
 
 .order__btn {
-  color: var(--white);
-  background-color: var(--accent-color);
+  color: $white;
+  background-color: $accent-color;
   font-style: bold;
   font-weight: 700;
   font-size: 16px;
@@ -242,12 +239,12 @@ header {
   border: none;
   text-align: center;
   transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
-}
 
-.order__btn:hover,
-.order__btn:focus {
-  background-color: #188ce8;
-  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+  &:hover,
+  &:focus {
+    background-color: #188ce8;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+  }
 }
 
 .backdrop {
@@ -283,7 +280,7 @@ header {
 
   min-width: 528px;
   min-height: 581px;
-  background-color: var(--white);
+  background-color: $white;
   outline: none;
 }
 
@@ -299,17 +296,17 @@ header {
 
   border: 1px solid rgba(0, 0, 0, 0.1);
   border-radius: 50%;
-  background-color: var(--white);
+  background-color: $white;
   transition: fill 2500ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .button-close__pic {
   fill: rgba(0, 0, 0, 1);
   transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
-}
 
-.button-close:hover .button-close__pic,
-.button-close:focus .button-close__pic {
-  fill: var(--accent-color);
+  .button-close:hover &,
+  .button-close:focus & {
+    fill: $accent-color;
+  }
 }
 
 .form__name {
@@ -320,7 +317,7 @@ header {
   font-weight: 700;
   font-size: 20px;
   line-height: 1.15;
-  color: var(--primary-text-color);
+  color: $primary-text-color;
 }
 
 .form__field {
@@ -338,18 +335,18 @@ header {
 .form__label {
   font-size: 12px;
   line-height: 1.17;
-  color: var(--title-text-color);
+  color: $title-text-color;
   margin-right: auto;
   margin-bottom: 4px;
 }
 
 .form__area {
   transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
-}
 
-.form__area:hover,
-.form__area:focus {
-  fill: var(--accent-color);
+  &:hover,
+  &:focus {
+    fill: $accent-color;
+  }
 }
 
 .form__pic {
@@ -360,7 +357,7 @@ header {
 
 .form__pic:hover + .form__input,
 .form__pic:focus + .form__input {
-  border: 1px solid var(--accent-color);
+  border: 1px solid $accent-color;
 }
 
 .form__input {
@@ -368,18 +365,18 @@ header {
   padding: 12px 12px 12px 42px;
   font-size: 12px;
   line-height: 1.17;
-  color: var(--primary-text-color);
+  color: $primary-text-color;
   outline: none;
 
   border: 1px solid rgba(33, 33, 33, 0.2);
   border-radius: 4px;
 
   transition: border 250ms cubic-bezier(0.4, 0, 0.2, 1);
-}
 
-.form__input:hover,
-.form__input:focus {
-  border: 1px solid var(--accent-color);
+  &:hover,
+  &:focus {
+    border: 1px solid $accent-color;
+  }
 }
 
 .form__textarea {
@@ -391,11 +388,11 @@ header {
   border: 1px solid rgba(33, 33, 33, 0.2);
   border-radius: 4px;
   transition: border 250ms cubic-bezier(0.4, 0, 0.2, 1);
-}
 
-.form__textarea:hover,
-.form__textarea:focus {
-  border: 1px solid var(--accent-color);
+  &:hover,
+  &:focus {
+    border: 1px solid $accent-color;
+  }
 }
 
 .checkbox {
@@ -406,7 +403,7 @@ header {
   font-size: 14px;
   line-height: 1.71;
   letter-spacing: 0.03em;
-  color: var(--title-text-color);
+  color: $title-text-color;
 }
 
 .checkbox__box--hidden {
@@ -428,10 +425,10 @@ header {
 .checkbox__icon {
   display: inline-block;
   margin-right: 7px;
-  background-color: var(--white);
+  background-color: $white;
   width: 15px;
   height: 15px;
-  border: 2px solid var(--primary-text-color);
+  border: 2px solid $primary-text-color;
   border-radius: 4px;
   transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
@@ -439,7 +436,7 @@ header {
 .checkbox__box:checked + .checkbox__icon {
   border-color: transparent;
   background-image: url("../images/checkwhite.svg");
-  background-color: var(--accent-color);
+  background-color: $accent-color;
   background-size: contain;
   background-origin: content-box;
   background-repeat: no-repeat;
@@ -448,7 +445,7 @@ header {
 }
 
 .checkbox__link {
-  color: var(--accent-color);
+  color: $accent-color;
   font-family: inherit;
   text-decoration: underline;
 }
@@ -457,27 +454,27 @@ header {
   font-weight: 700;
   font-size: 16px;
   line-height: 1.87;
-  color: var(--white);
-  background-color: var(--accent-color);
+  color: $white;
+  background-color: $accent-color;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
   border-radius: 4px;
   border: none;
   padding: 10px 55px;
   margin-bottom: 40px;
   transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
-}
 
-.btn__submit:hover,
-.btn__submit:focus {
-  background-color: #188ce8;
-  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+  &:hover,
+  &:focus {
+    background-color: #188ce8;
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+  }
 }
 
 /* section advantages*/
 
 .advantages {
-  //   background-color: var(--white)) ;
-  //   list-style: none;
+  background-color: $white;
+  list-style: none;
   padding-top: 94px;
 }
 
@@ -488,20 +485,20 @@ header {
 
 .advantages__card {
   width: 270px;
+
+  &:not(:last-child) {
+    margin-right: 30px;
+  }
 }
 
 .advantages__box {
   width: 270px;
   height: 120px;
-  background-color: var(--additional-background-color);
+  background-color: $additional-background-color;
   margin-bottom: 30px;
   display: flex;
   align-items: center;
   justify-content: center;
-}
-
-.advantages__card:not(:last-child) {
-  margin-right: 30px;
 }
 
 .advantages__item {
@@ -513,7 +510,7 @@ header {
 }
 
 .advantages__text {
-  color: var(--title-text-color);
+  color: $title-text-color;
   font-size: 14px;
   line-height: 1.71;
   letter-spacing: 0.03em;
@@ -550,6 +547,10 @@ header {
   padding-bottom: 94px;
   width: 370px;
   height: 294px;
+
+  &:nth-child(3n) {
+    margin-right: 0;
+  }
 }
 
 .works__thumb {
@@ -567,10 +568,6 @@ header {
   background-color: rgba(47, 48, 58, 0.8);
 }
 
-.works__card:nth-child(3n) {
-  margin-right: 0;
-}
-
 .works__info {
   font-weight: 700;
   font-size: 14px;
@@ -585,12 +582,12 @@ header {
 /* team */
 
 .team {
-  background-color: var(--additional-background-color);
+  background-color: $additional-background-color;
   padding-top: 94px;
   padding-bottom: 94px;
 }
 .team__container {
-  background-color: var(--additional-background-color);
+  background-color: $additional-background-color;
 }
 
 .team__item {
@@ -599,15 +596,15 @@ header {
 
 .team__card {
   margin-right: 30px;
-  background-color: var(--white);
+  background-color: $white;
   width: 270px;
   border-radius: 0px 0px 4px 4px;
   box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
     0px 2px 1px rgba(0, 0, 0, 0.2);
-}
 
-.team__card:nth-child(4n) {
-  margin-right: 0;
+  &:nth-child(4n) {
+    margin-right: 0;
+  }
 }
 
 .team__info {
@@ -624,7 +621,7 @@ header {
 }
 
 .team__position {
-  color: var(--title-text-color);
+  color: $title-text-color;
   font-size: 16px;
   line-height: 1.19;
   text-align: center;
@@ -634,7 +631,7 @@ header {
 .social {
   display: flex;
   margin-top: 16px;
-  background-color: var(--white);
+  background-color: $white;
 }
 
 .social__info:not(:last-child) {
@@ -653,23 +650,23 @@ header {
 
 .social__link:hover,
 .social__link:focus {
-  background-color: var(--accent-color);
-}
-
-.social__link:hover .social__icon,
-.social__link:focus .social__icon {
-  fill: var(--white);
+  background-color: $accent-color;
 }
 
 .social__icon {
   fill: #afb1b8;
   transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+
+  .social__link:hover &,
+  .social__link:focus & {
+    fill: $white;
+  }
 }
 
 /* our clients */
 
 .clients {
-  //   background-color: var(--white));
+  background-color: $white;
   list-style: none;
   padding: 94px 0;
 }
@@ -701,33 +698,33 @@ header {
   border: 1px solid #afb1b8;
   border-radius: 4px;
   transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
-}
 
-.clients__link:hover,
-.clients__link:focus {
-  border: 1px solid var(--accent-color);
-}
-
-.clients__link:hover .clients__icon,
-.clients__link:focus .clients__icon {
-  fill: var(--accent-color);
+  &:hover,
+  &:focus {
+    border: 1px solid $accent-color;
+  }
 }
 
 .clients__icon {
   fill: #afb1b8;
   transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+
+  .clients__link:hover &,
+  .clients__link:focus & {
+    fill: $accent-color;
+  }
 }
 
 /*contact inform*/
 
 .footer {
-  background-color: var(--second-background-color);
+  background-color: $second-background-color;
   padding-top: 60px;
   padding-bottom: 60px;
 }
 
 .footer__container {
-  background-color: var(--second-background-color);
+  background-color: $second-background-color;
   padding-right: 15px;
   padding-left: 15px;
   margin-left: auto;
@@ -739,22 +736,17 @@ header {
 }
 
 .footer__logo {
-  color: var(--white);
+  color: $white;
 }
 
 .footer__contact {
-  color: var(--white);
+  color: $white;
   font-family: "Roboto", sans-serif;
   font-style: normal;
   font-weight: 400;
   font-size: 14px;
   line-height: 1.71;
   margin-top: 20px;
-}
-
-.footer__item:hover,
-.footer__item:focus {
-  color: var(--accent-color);
 }
 
 .footer__auth {
@@ -764,6 +756,11 @@ header {
 .footer__item {
   color: rgba(255, 255, 255, 0.6);
   transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+
+  &:hover,
+  &:focus {
+    color: $accent-color;
+  }
 }
 
 .footer__title:nth-child(n + 2) {
@@ -779,7 +776,7 @@ header {
 }
 
 .join__text {
-  color: var(--white);
+  color: $white;
   margin: 0;
   margin-bottom: 20px;
 }
@@ -794,21 +791,21 @@ header {
 
 .join__link {
   background: rgba(255, 255, 255, 0.1);
-}
 
-.join__link:hover,
-.join__link:focus {
-  border-radius: 50%;
-  background-color: var(--accent-color);
-}
-
-.join__link:hover .join__icon,
-.join__link:focus .join__icon {
-  fill: var(--white);
+  &:hover,
+  &:focus {
+    border-radius: 50%;
+    background-color: $accent-color;
+  }
 }
 
 .join__icon {
-  fill: var(--white);
+  fill: $white;
+
+  .join__link:hover &,
+  .join__link:focus & {
+    fill: $white;
+  }
 }
 
 .footer__mailing {
@@ -827,7 +824,7 @@ header {
   line-height: 1.14;
   letter-spacing: 0.03em;
   text-transform: uppercase;
-  color: var(--white);
+  color: $white;
 
   margin-bottom: 20px;
 }
@@ -844,7 +841,7 @@ header {
   filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.15));
   border-radius: 4px;
   padding: 15px 16px 15px 16px;
-  color: var(--white);
+  color: $white;
 }
 
 .subscribe__btn {
@@ -858,14 +855,14 @@ header {
   border-radius: 4px;
   margin-left: 12px;
   margin-top: auto;
-  background-color: var(--accent-color);
+  background-color: $accent-color;
   transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
-}
 
-.subscribe__btn:hover,
-.subscribe__btn:focus {
-  background-color: #188ce8;
-  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+  &:hover,
+  &:focus {
+    background-color: #188ce8;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+  }
 }
 
 .subscribe__text {
@@ -874,7 +871,7 @@ header {
   font-weight: 700;
   font-size: 16px;
   line-height: 1.88;
-  color: var(--white);
+  color: $white;
   padding-left: 29px;
   padding-right: 10px;
 }
@@ -902,7 +899,7 @@ header {
 }
 
 .button__text {
-  color: var(--primary-text-color);
+  color: $primary-text-color;
   background-color: #f5f4fa;
   border: 1px solid transparent;
   padding: 6px 22px;
@@ -913,14 +910,14 @@ header {
     box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
 
   display: flex;
-}
 
-.button__text:hover,
-.button__text:focus {
-  color: var(--white);
-  background-color: var(--accent-color);
-  box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.08), 0px 2px 2px rgba(0, 0, 0, 0.12),
-    0px 3px 1px rgba(0, 0, 0, 0.1);
+  &:hover,
+  &:focus {
+    color: $white;
+    background-color: $accent-color;
+    box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.08), 0px 2px 2px rgba(0, 0, 0, 0.12),
+      0px 3px 1px rgba(0, 0, 0, 0.1);
+  }
 }
 
 .product {
@@ -940,18 +937,12 @@ header {
 .product__link {
   display: block;
   transition: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
-}
 
-.product__link:hover,
-.product__link:focus {
-  box-shadow: 1px 4px 6px rgba(0, 0, 0, 0.16), 0px 4px 4px rgba(0, 0, 0, 0.06),
-    0px 1px 1px rgba(0, 0, 0, 0.12);
-}
-
-.product__link:hover .product__overlay,
-.product__link:focus .product__overlay {
-  transform: translateX(0);
-  opacity: 1;
+  &:hover,
+  &:focus {
+    box-shadow: 1px 4px 6px rgba(0, 0, 0, 0.16), 0px 4px 4px rgba(0, 0, 0, 0.06),
+      0px 1px 1px rgba(0, 0, 0, 0.12);
+  }
 }
 
 .product__thumb {
@@ -974,6 +965,12 @@ header {
     opacity 250ms cubic-bezier(0.4, 0, 0.2, 1);
 
   opacity: 0;
+
+  .product__link:hover &,
+  .product__link:focus & {
+    transform: translateX(0);
+    opacity: 1;
+  }
 }
 
 .product__text {
@@ -993,7 +990,7 @@ header {
 }
 
 .product__opportunity {
-  color: var(--primary-text-color);
+  color: $primary-text-color;
   font-weight: 700;
   font-size: 18px;
   line-height: 2;
@@ -1002,7 +999,7 @@ header {
 }
 
 .product__item {
-  color: var(--title-text-color);
+  color: $title-text-color;
   font-size: 16px;
   line-height: 1.87;
   margin: 0;
