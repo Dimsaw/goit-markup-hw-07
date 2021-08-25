@@ -27,8 +27,8 @@ header {
 .logo__item {
   color: #000000;
   text-decoration: none;
-  font-family: "Raleway", sans-serif;
-  font-style: normal;
+  font-family: $secondary-font;
+  font-style: $primary-font-style;
   font-weight: 700;
   font-size: 26px;
   line-height: 1.19;
@@ -99,7 +99,7 @@ header {
 
 .auth-nav__link {
   color: $title-text-color;
-  font-style: normal;
+  font-style: $primary-font-style;
   font-weight: 500;
   font-size: 14px;
   line-height: 1.14;
